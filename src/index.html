@@ -7,13 +7,40 @@
     <meta property="og:title" content="Kawacii" />
     <meta
       property="og:description"
-      content="Youw adowable wittwe buddy fow tuwning images into supew kawaii ASCII awt!"
+      content="Your adorable little buddy for turning images into super kawaii ASCII art!"
     />
     <meta property="og:image" content="https://i.ibb.co/HBChjSs/logo.jpg" />
-    <link rel="shortcut icon" href="https://i.ibb.co/HBChjSs/logo.jpg" type="image/x-icon">
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="shortcut icon" href="https://i.ibb.co/HBChjSs/logo.jpg" type="image/x-icon" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/range.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <div class="container">
+      <div class="options">
+        <label class="button imageBtn" for="image"
+          >Choose photo<input type="file" id="image"
+        /></label>
+        <img src="assets/logo.jpg" class="preview" />
+        <div class="controls">
+          <span class="title">Height:</span>
+          <input type="range" />
+        </div>
+        <div class="controls">
+          <span class="title">Width:</span>
+          <input type="range" />
+        </div>
+        <input type="text" class="characterInput" placeholder="Enter from lighter to heavier" />
+        <input type="button" value="Copy" class="button copyToClipboard" />
+        <span class="info">Characters:4000 Width:255 Height:500</span>
+      </div>
+      <pre class="output"></pre>
+    </div>
     <script src="scripts/main.js" type="module"></script>
   </body>
 </html>
