@@ -1,6 +1,6 @@
 # Welcome to Kawacii!🌟
 
-Turn your photos into stunning ASCII art with Kawacii, the most awesome converter out there! 😍
+Turn your photos into stunning ASCII art with Kawacii, the most awesome converter out there! 😍 Try it out [right here!](https://shazambolt8.github.io/kawacii/src/)
 
 <p align="center">
   <img src="src/assets/logo.jpg" alt="Neko" width="400" />
@@ -48,7 +48,7 @@ I had some images that I wanted to convert into ASCII art, but I couldn't find a
 
 **Note**: When specifying custom characters, begin with a whitespace character for proper alignment. Arrange the characters in ascending order of weight without any spaces between them. For example: `.~$#` (please include " " at the beginning).
 
-Open Kawacii in your browser and start creating adorable ASCII art today! 🖼️✨
+Open [Kawacii](https://shazambolt8.github.io/kawacii/src/) in your browser and start creating adorable ASCII art today! 🖼️✨
 
 ## Credits
 
