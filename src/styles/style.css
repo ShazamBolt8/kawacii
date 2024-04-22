@@ -9,13 +9,15 @@
   --text-ui-secondary: #565656;
   --text-input-primary: #eb9f94;
   --text-input-primary-focus: #da8c81;
+  --output-primary: rgba(0, 0, 0, 0.9);
+  --output-primary-text: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --bg-secondary: rgba(0, 0, 0, 0.5);
     --text-ui-primary: #ffffff;
-      --text-ui-secondary: #9b9b9b;
+    --text-ui-secondary: #9b9b9b;
     --text-input-primary: rgba(0, 0, 0, 0.5);
     --text-input-primary-focus: rgba(0, 0, 0, 0.7);
   }
@@ -26,6 +28,8 @@
   padding: 0;
   box-sizing: border-box;
   user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  caret-color: var(--text-ui-secondary);
 }
 
 *::placeholder {
@@ -58,6 +62,7 @@ input[type="file"] {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   font-family: "Varela Round", sans-serif;
   color: var(--text-ui-primary);
 }
@@ -98,11 +103,16 @@ input[type="file"] {
   background: var(--btn-primary-pressed);
 }
 
-.container .options .preview {
+.container .options #canvas {
   width: 100%;
   height: auto;
   border-radius: 1em;
 }
+
+.container .options .preview {
+  display: none;
+}
+
 .container .options .title {
   font-weight: bolder;
   font-size: 1.7em;
@@ -146,11 +156,54 @@ input[type="file"] {
   font-size: 1.1em;
 }
 
-.output {
+.container .outputDiv {
   padding: 1em;
   height: 95%;
   width: 70%;
-  background: var(--bg-secondary);
+  background-color: var(--output-primary);
   backdrop-filter: blur(20px);
   border-radius: 1em;
+}
+
+.container .outputDiv .header {
+  display: flex;
+  gap: 0.3em;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: flex-end;
+  align-self: flex-start;
+  margin-bottom: 0.6em;
+}
+
+.container .outputDiv .header .fontBtn {
+  font-size: 1.7em;
+  padding: 0.1em 0.5em;
+}
+
+.container .outputDiv #output {
+  overflow: auto;
+  max-height: 95%;
+  color: var(--output-primary-text);
+}
+
+@media screen and (max-width: 768px) {
+  html,
+  body {
+    height: auto;
+  }
+  .container {
+    width: 100%;
+    flex-flow: column;
+    padding: 1em;
+    gap: 1em;
+  }
+  .container .options {
+    width: 100%;
+  }
+  .container .options .characterInput {
+    font-size: 1.3em;
+  }
+  .container .outputDiv {
+    width: 100%;
+  }
 }

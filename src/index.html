@@ -23,23 +23,35 @@
   <body>
     <div class="container">
       <div class="options">
-        <label class="button imageBtn" for="image"
-          >Choose photo<input type="file" id="image"
+        <label class="button imageBtn" for="imagePicker"
+          >Choose photo<input type="file" id="imagePicker"
         /></label>
-        <img src="assets/logo.jpg" class="preview" />
+        <img src="assets/logo.jpg" class="preview" id="imagePreview" />
+        <canvas id="canvas"></canvas>
         <div class="controls">
           <span class="title">Height:</span>
-          <input type="range" />
+          <input id="heightBar" max="400" type="range" />
         </div>
         <div class="controls">
           <span class="title">Width:</span>
-          <input type="range" />
+          <input id="widthBar" max="400" type="range" />
         </div>
-        <input type="text" class="characterInput" placeholder="Enter from lighter to heavier" />
-        <input type="button" value="Copy" class="button copyToClipboard" />
-        <span class="info">Characters:4000 Width:255 Height:500</span>
+        <input
+          type="text"
+          id="characterArrayInput"
+          class="characterInput"
+          placeholder="Enter from lighter to heavier"
+        />
+        <input type="button" value="Copy" id="copyTextBtn" class="button copyToClipboard" />
+        <span id="stats" class="info"></span>
       </div>
-      <pre class="output"></pre>
+      <div class="outputDiv">
+        <div class="header">
+          <input class="button fontBtn" type="button" value="+" />
+          <input class="button fontBtn" type="button" value="-" />
+        </div>
+        <pre id="output"></pre>
+      </div>
     </div>
     <script src="scripts/main.js" type="module"></script>
   </body>
