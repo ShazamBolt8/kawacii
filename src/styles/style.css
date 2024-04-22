@@ -79,6 +79,7 @@ input[type="file"] {
   background: var(--bg-secondary);
   backdrop-filter: blur(20px);
   border-radius: 1em;
+  overflow: auto;
 }
 
 .button {
